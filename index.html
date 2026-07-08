@@ -270,7 +270,7 @@ footer{text-align:center; font-size:.7em; color:#999; padding:20px 16px}
     <button class="big-btn c-teal" style="margin-top:16px" onclick="addMed()">➕ 알림 추가하기</button>
   </div>
   <div id="medList"></div>
-  <p class="notice">※ 이 화면(또는 앱)이 열려 있어야 알림이 울립니다. 안드로이드 앱 버전에서는 화면이 꺼져 있어도 울리도록 만들 예정입니다.</p>
+  <p class="notice" id="medNotice">※ 이 화면(또는 앱)이 열려 있어야 알림이 울립니다. 안드로이드 앱에서는 화면이 꺼져 있어도 울립니다.</p>
 </div>
 
 <!-- ========== 치매 예방 ========== -->
@@ -346,7 +346,7 @@ footer{text-align:center; font-size:.7em; color:#999; padding:20px 16px}
   <div class="ad-box">광고 자리</div>
 </div>
 
-<footer>실버 SOS · 어르신을 위한 생활 도우미<br>본 서비스의 건강·복지 정보는 참고용입니다.</footer>
+<footer>실버 SOS · 어르신을 위한 생활 도우미<br>본 서비스의 건강·복지 정보는 참고용입니다.<br><a href="privacy.html">개인정보처리방침</a></footer>
 
 <script>
 /* ===================== 공통 ===================== */
@@ -503,7 +503,11 @@ function renderMeds(){
     d.appendChild(b); box.appendChild(d);
   });
 }
-function saveMeds(){ localStorage.setItem('sos_meds',JSON.stringify(meds)); renderMeds(); }
+function saveMeds(){
+  localStorage.setItem('sos_meds',JSON.stringify(meds)); renderMeds();
+  // 안드로이드 앱에서 실행 중이면 네이티브 알람에도 등록 (앱 꺼져 있어도 울림)
+  if(window.AndroidBridge&&AndroidBridge.setAlarms){ try{ AndroidBridge.setAlarms(JSON.stringify(meds)); }catch(e){} }
+}
 function addMed(){
   const name=document.getElementById('medName').value.trim()||'약';
   const time=document.getElementById('medTime').value;
