@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>실버 SOS - 어르신 생활 도우미</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<style>
+:root{
+  --navy:#1a3a5c; --navy-dark:#122a44; --yellow:#ffd94d;
+  --bg:#fffdf5; --card:#ffffff; --red:#d63031; --green:#1e8449;
+  --orange:#e67e22; --purple:#7d3c98; --blue:#1f618d; --teal:#117a65;
+  --line:#d9d2c0;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:rgba(255,217,77,.4)}
+html{font-size:22px}
+body.font-big{font-size:1.15em}
+body.font-huge{font-size:1.3em}
+body{
+  font-family:-apple-system,"Malgun Gothic","맑은 고딕","Noto Sans KR",sans-serif;
+  background:var(--bg); color:#222; line-height:1.55;
+  max-width:520px; margin:0 auto; min-height:100vh; padding-bottom:30px;
+}
+header{
+  background:var(--navy); color:#fff; padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between;
+  position:sticky; top:0; z-index:10;
+}
+header h1{font-size:1.15em; letter-spacing:1px; display:flex; align-items:center; gap:10px}
+.logo{width:42px; height:42px; border-radius:10px; flex-shrink:0}
+#fontBtn{
+  background:var(--yellow); color:var(--navy); border:none; border-radius:12px;
+  font-size:.8em; font-weight:bold; padding:10px 14px; cursor:pointer;
+}
+.screen{display:none; padding:16px}
+.screen.active{display:block}
+.back-btn{
+  width:100%; background:var(--navy); color:#fff; border:none; border-radius:14px;
+  font-size:1.05em; font-weight:bold; padding:16px; margin-bottom:16px; cursor:pointer;
+}
+.screen-title{font-size:1.2em; font-weight:bold; color:var(--navy); margin-bottom:6px}
+.screen-desc{font-size:.85em; color:#555; margin-bottom:16px}
+
+/* 홈 */
+.greeting{
+  background:var(--yellow); border-radius:16px; padding:16px; margin-bottom:16px;
+  font-weight:bold; color:var(--navy); font-size:1em; text-align:center;
+}
+.home-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+.home-btn{
+  border:none; border-radius:18px; color:#fff; cursor:pointer;
+  padding:20px 8px; min-height:120px; font-size:1em; font-weight:bold;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  box-shadow:0 3px 6px rgba(0,0,0,.15);
+}
+.home-btn .ico{font-size:1.8em}
+.c-red{background:var(--red)} .c-green{background:var(--green)}
+.c-blue{background:var(--blue)} .c-orange{background:var(--orange)}
+.c-purple{background:var(--purple)} .c-teal{background:var(--teal)}
+.c-navy{background:var(--navy)} .c-brown{background:#8e5b25}
+
+/* 공통 카드/버튼 */
+.card{
+  background:var(--card); border:2px solid var(--line); border-radius:16px;
+  padding:16px; margin-bottom:14px;
+}
+.card h3{color:var(--navy); font-size:1em; margin-bottom:8px}
+.card p{font-size:.9em}
+.big-btn{
+  display:block; width:100%; border:none; border-radius:14px; cursor:pointer;
+  font-size:1em; font-weight:bold; padding:18px; margin-bottom:12px; color:#fff;
+  text-align:center; text-decoration:none;
+}
+.speak-btn{
+  background:var(--teal); color:#fff; border:none; border-radius:10px;
+  font-size:.8em; font-weight:bold; padding:10px 14px; margin-top:10px; cursor:pointer;
+}
+label{display:block; font-weight:bold; font-size:.9em; margin:12px 0 6px; color:var(--navy)}
+input,select{
+  width:100%; font-size:1em; padding:14px; border:2px solid var(--navy);
+  border-radius:12px; background:#fff;
+}
+.result-item{
+  background:#eef7ee; border:2px solid var(--green); border-radius:14px;
+  padding:14px; margin-bottom:12px;
+}
+.result-item strong{color:var(--green); font-size:1em}
+.result-item p{font-size:.85em; margin-top:4px}
+.result-item a{
+  display:inline-block; margin-top:8px; background:var(--green); color:#fff;
+  text-decoration:none; font-size:.85em; font-weight:bold; padding:10px 16px; border-radius:10px;
+}
+.ad-box{
+  border:2px dashed #bbb; border-radius:14px; padding:18px; text-align:center;
+  color:#999; font-size:.8em; margin:16px 0; background:#fafafa;
+}
+.notice{font-size:.75em; color:#777; margin-top:10px}
+
+/* 말동무 채팅 */
+#chatBox{
+  background:#fff; border:2px solid var(--line); border-radius:16px;
+  padding:14px; min-height:260px; max-height:400px; overflow-y:auto; margin-bottom:14px;
+}
+.msg{margin-bottom:12px; padding:12px 14px; border-radius:14px; font-size:.95em; max-width:88%}
+.msg.ai{background:#eef3fa; border:1px solid #c8d8ec}
+.msg.me{background:var(--yellow); margin-left:auto; text-align:right}
+#micBtn{
+  width:100%; background:var(--red); color:#fff; border:none; border-radius:50px;
+  font-size:1.1em; font-weight:bold; padding:22px; cursor:pointer; margin-bottom:10px;
+}
+#micBtn.listening{background:var(--green); animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.6}}
+.talk-row{display:flex; gap:8px}
+.talk-row input{flex:1}
+.talk-row button{
+  background:var(--navy); color:#fff; border:none; border-radius:12px;
+  font-size:.9em; font-weight:bold; padding:0 18px; cursor:pointer;
+}
+
+/* 긴급전화 */
+.call-btn{
+  display:flex; align-items:center; gap:14px; width:100%;
+  border:none; border-radius:16px; color:#fff; cursor:pointer;
+  font-size:1.05em; font-weight:bold; padding:20px; margin-bottom:12px;
+  text-decoration:none; box-shadow:0 3px 6px rgba(0,0,0,.15);
+}
+.call-btn .ico{font-size:1.5em}
+.call-btn small{display:block; font-weight:normal; font-size:.7em; opacity:.9}
+
+/* 게임 */
+.game-area{
+  background:#fff; border:3px solid var(--purple); border-radius:16px;
+  padding:20px; text-align:center; margin-bottom:14px;
+}
+.game-num{font-size:2em; font-weight:bold; color:var(--navy); letter-spacing:6px; margin:14px 0}
+.quiz-opt{
+  display:block; width:100%; background:#fff; border:2px solid var(--navy); color:var(--navy);
+  border-radius:12px; font-size:.95em; font-weight:bold; padding:16px; margin-bottom:10px; cursor:pointer;
+}
+.quiz-opt.correct{background:var(--green); color:#fff; border-color:var(--green)}
+.quiz-opt.wrong{background:var(--red); color:#fff; border-color:var(--red)}
+.score-line{font-size:.85em; color:var(--purple); font-weight:bold; margin-bottom:10px}
+
+/* 운세 */
+.zodiac-grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:14px}
+.zodiac-btn{
+  background:#fff; border:2px solid var(--orange); color:#8e4b10; border-radius:14px;
+  font-size:.9em; font-weight:bold; padding:14px 4px; cursor:pointer;
+}
+.fortune-card{
+  background:#fff8e8; border:2px solid var(--orange); border-radius:16px; padding:16px; margin-bottom:14px;
+}
+.fortune-card h3{color:var(--orange); margin-bottom:6px}
+
+.med-item{
+  display:flex; justify-content:space-between; align-items:center;
+  background:#fff; border:2px solid var(--blue); border-radius:14px;
+  padding:14px; margin-bottom:10px; font-weight:bold; font-size:1em;
+}
+.med-item button{
+  background:var(--red); color:#fff; border:none; border-radius:10px;
+  padding:10px 14px; font-size:.8em; font-weight:bold; cursor:pointer;
+}
+footer{text-align:center; font-size:.7em; color:#999; padding:20px 16px}
+</style>
+</head>
+<body>
+<header>
+  <h1><svg class="logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="512" height="512" rx="100" fill="#ffd94d"/><text x="70" y="360" font-family="Arial, sans-serif" font-weight="bold" font-size="260" fill="#1a3a5c">S</text><g transform="translate(256,256) scale(0.45) translate(-256,-266)"><path d="M256,435 C256,435 88,330 88,210 C88,142 138,98 196,98 C228,98 252,118 256,148 C260,118 284,98 316,98 C374,98 424,142 424,210 C424,330 256,435 256,435 Z" fill="#d63031"/></g><text x="290" y="360" font-family="Arial, sans-serif" font-weight="bold" font-size="260" fill="#1a3a5c">S</text></svg>실버 SOS</h1>
+  <button id="fontBtn" onclick="cycleFont()">가 글자크기</button>
+</header>
+
+<!-- ========== 홈 ========== -->
+<div class="screen active" id="home">
+  <div class="greeting" id="greeting">안녕하세요! 오늘도 건강한 하루 되세요 🌞</div>
+  <div class="home-grid">
+    <button class="home-btn c-red" onclick="go('health')"><span class="ico">🩺</span>건강 사전</button>
+    <button class="home-btn c-green" onclick="go('money')"><span class="ico">💰</span>지원금 찾기</button>
+    <button class="home-btn c-blue" onclick="go('hospital')"><span class="ico">🏥</span>병원·약국</button>
+    <button class="home-btn c-teal" onclick="go('medicine')"><span class="ico">💊</span>약 알림</button>
+    <button class="home-btn c-purple" onclick="go('brain')"><span class="ico">🧠</span>치매 예방</button>
+    <button class="home-btn c-orange" onclick="go('grandkid')"><span class="ico">👶</span>손주랑 이야기</button>
+    <button class="home-btn c-navy" onclick="go('phone')"><span class="ico">📞</span>긴급 전화</button>
+    <button class="home-btn c-brown" onclick="go('fortune')"><span class="ico">☀️</span>오늘 운세</button>
+  </div>
+  <div class="ad-box">광고 자리 (AdSense 320×100)</div>
+</div>
+
+<!-- ========== 건강 사전 ========== -->
+<div class="screen" id="health">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">🩺 큰글씨 건강 사전</div>
+  <div class="screen-desc">궁금한 항목을 누르면 크게 보여드리고, 🔊 버튼을 누르면 읽어드립니다.</div>
+  <div id="healthCards"></div>
+  <div class="card">
+    <h3>🤖 건강 질문하기</h3>
+    <p style="font-size:.8em;color:#666">예: "혈압약 먹고 커피 마셔도 되나요?"</p>
+    <div class="talk-row" style="margin-top:10px">
+      <input id="healthQ" placeholder="질문을 적어주세요">
+      <button onclick="askHealth()">질문</button>
+    </div>
+    <div id="healthA" style="display:none" class="msg ai"></div>
+  </div>
+  <div class="ad-box">광고 자리</div>
+  <p class="notice">※ 이 정보는 참고용입니다. 정확한 진단과 처방은 반드시 의사·약사와 상담하세요.</p>
+</div>
+
+<!-- ========== 지원금 ========== -->
+<div class="screen" id="money">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">💰 내가 받을 수 있는 지원금</div>
+  <div class="screen-desc">몇 가지만 알려주시면 받을 수 있는 지원을 찾아드립니다.</div>
+  <div class="card">
+    <label>태어난 년도</label>
+    <input type="number" id="mBirthYear" placeholder="예: 1958" min="1910" max="1980">
+    <label>사시는 지역</label>
+    <select id="mRegion">
+      <option>서울</option><option>부산</option><option>대구</option><option>인천</option>
+      <option>광주</option><option>대전</option><option>울산</option><option>세종</option>
+      <option>경기</option><option>강원</option><option>충북</option><option>충남</option>
+      <option>전북</option><option>전남</option><option>경북</option><option>경남</option><option>제주</option>
+    </select>
+    <label>소득이 적은 편이신가요? (기초연금 등 기준)</label>
+    <select id="mIncome">
+      <option value="unknown">잘 모르겠어요</option>
+      <option value="low">네, 적은 편이에요</option>
+      <option value="high">아니요, 넉넉한 편이에요</option>
+    </select>
+    <label>장애 등록이 되어 있으신가요?</label>
+    <select id="mDisability">
+      <option value="no">아니요</option>
+      <option value="yes">네</option>
+    </select>
+    <button class="big-btn c-green" style="margin-top:16px" onclick="findBenefits()">🔍 지원금 찾아보기</button>
+  </div>
+  <div id="moneyResults"></div>
+  <p class="notice">※ 금액과 기준은 해마다 바뀝니다. 정확한 내용은 복지로(www.bokjiro.go.kr) 또는 ☎ 129에서 확인하세요.</p>
+</div>
+
+<!-- ========== 병원·약국 ========== -->
+<div class="screen" id="hospital">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">🏥 병원·약국 찾기</div>
+  <div class="screen-desc">버튼을 누르면 우리 동네 가까운 곳을 지도로 보여드립니다.<br>(위치 사용을 "허용"해 주세요)</div>
+  <button class="big-btn c-blue" onclick="openMap('내과')">🏥 가까운 병원 (내과)</button>
+  <button class="big-btn c-teal" onclick="openMap('약국')">💊 가까운 약국</button>
+  <button class="big-btn c-red" onclick="openMap('응급실')">🚨 응급실 찾기</button>
+  <button class="big-btn c-orange" onclick="window.open('https://www.e-gen.or.kr','_blank')">📅 휴일에 여는 병원·약국 (응급의료포털)</button>
+  <a class="big-btn c-navy" href="tel:119">📞 위급하면 119 바로 전화</a>
+  <div class="card">
+    <h3>이 병원들도 자주 찾으세요</h3>
+    <button class="quiz-opt" onclick="openMap('정형외과')">🦴 정형외과 (무릎·허리)</button>
+    <button class="quiz-opt" onclick="openMap('안과')">👁 안과 (눈)</button>
+    <button class="quiz-opt" onclick="openMap('치과')">🦷 치과 (이·임플란트)</button>
+    <button class="quiz-opt" onclick="openMap('이비인후과')">👂 이비인후과 (귀·코)</button>
+  </div>
+</div>
+
+<!-- ========== 약 알림 ========== -->
+<div class="screen" id="medicine">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">💊 약 드실 시간 알림</div>
+  <div class="screen-desc">회원가입 없이 시간만 정하면, 시간이 되면 알려드립니다.<br>(화면이 켜져 있을 때 울립니다)</div>
+  <div class="card">
+    <label>약 이름 (예: 혈압약)</label>
+    <input id="medName" placeholder="예: 혈압약">
+    <label>드시는 시간</label>
+    <input type="time" id="medTime">
+    <button class="big-btn c-teal" style="margin-top:16px" onclick="addMed()">➕ 알림 추가하기</button>
+  </div>
+  <div id="medList"></div>
+  <p class="notice">※ 이 화면(또는 앱)이 열려 있어야 알림이 울립니다. 안드로이드 앱 버전에서는 화면이 꺼져 있어도 울리도록 만들 예정입니다.</p>
+</div>
+
+<!-- ========== 치매 예방 ========== -->
+<div class="screen" id="brain">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">🧠 치매 예방 놀이터</div>
+  <div class="screen-desc">매일 조금씩 두뇌 운동을 해보세요!</div>
+  <div class="score-line" id="brainScore"></div>
+  <button class="big-btn c-purple" onclick="startQuiz()">❓ 오늘의 상식 퀴즈</button>
+  <button class="big-btn c-blue" onclick="startNumber()">🔢 숫자 기억하기</button>
+  <button class="big-btn c-orange" onclick="startCalc()">➕ 계산 게임</button>
+  <div id="gameArea"></div>
+  <div class="ad-box">광고 자리</div>
+</div>
+
+<!-- ========== 손주랑 대화거리 ========== -->
+<div class="screen" id="grandkid">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">👶 손주랑 이야기</div>
+  <div class="screen-desc">매일 새로운 이야기와 퀴즈가 나옵니다. 손주에게 들려주거나 전화할 때 써보세요!</div>
+  <div class="card" style="border-color:var(--orange)">
+    <h3>📖 오늘 손주에게 해줄 옛날 이야기</h3>
+    <p id="gkStory"></p>
+    <button class="speak-btn" onclick="speakStory()">🔊 읽어주기</button>
+  </div>
+  <div class="card" style="border-color:var(--blue)">
+    <h3>❓ 손주에게 내볼 퀴즈</h3>
+    <p id="gkQuiz" style="font-weight:bold"></p>
+    <div id="gkQuizAns" style="display:none;margin-top:10px;background:#eef7ee;border-radius:10px;padding:12px"></div>
+    <button class="speak-btn" style="background:var(--blue)" onclick="showKidAnswer()">👀 정답 보기</button>
+  </div>
+  <div class="card" style="border-color:var(--green)">
+    <h3>💕 손주가 좋아하는 말 한마디</h3>
+    <p id="gkLove" style="font-size:1.05em;font-weight:bold;color:var(--green)"></p>
+    <p style="font-size:.8em;color:#666;margin-top:8px">전화나 문자로 이 말을 전해보세요. 손주가 정말 좋아해요!</p>
+  </div>
+  <div class="card" style="border-color:var(--purple)">
+    <h3>💬 이런 것도 물어보세요</h3>
+    <p id="gkTopic"></p>
+  </div>
+  <button class="big-btn c-orange" onclick="newGrandkid()">🔄 다른 이야기 보기</button>
+  <div class="ad-box">광고 자리</div>
+</div>
+
+<!-- ========== 긴급 전화 ========== -->
+<div class="screen" id="phone">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">📞 긴급 전화</div>
+  <div class="screen-desc">누르면 바로 전화가 걸립니다.</div>
+  <a class="call-btn c-red" href="tel:119"><span class="ico">🚑</span><span>119<small>불이 나거나 몸이 위급할 때</small></span></a>
+  <a class="call-btn c-navy" href="tel:112"><span class="ico">🚓</span><span>112<small>도둑·사기·위험한 일</small></span></a>
+  <a class="call-btn c-green" href="tel:129"><span class="ico">🏛</span><span>129 보건복지상담<small>지원금·복지 궁금할 때</small></span></a>
+  <a class="call-btn c-orange" href="tel:15771389"><span class="ico">🛡</span><span>1577-1389<small>노인 학대 신고</small></span></a>
+  <a class="call-btn c-purple" href="tel:1355"><span class="ico">💳</span><span>1355 국민연금<small>연금 문의</small></span></a>
+  <div id="familyBtns"></div>
+  <div class="card">
+    <h3>👨‍👩‍👧 자녀·가족 번호 등록</h3>
+    <label>이름 (예: 큰아들)</label>
+    <input id="famName" placeholder="예: 큰아들">
+    <label>전화번호</label>
+    <input id="famNum" type="tel" placeholder="예: 01012345678">
+    <button class="big-btn c-navy" style="margin-top:14px" onclick="addFamily()">➕ 등록하기</button>
+  </div>
+</div>
+
+<!-- ========== 오늘 운세 ========== -->
+<div class="screen" id="fortune">
+  <button class="back-btn" onclick="go('home')">⬅ 처음으로</button>
+  <div class="screen-title">☀️ 오늘의 운세</div>
+  <div class="screen-desc">태어난 해의 띠를 눌러주세요.</div>
+  <div class="zodiac-grid" id="zodiacGrid"></div>
+  <div id="fortuneResult"></div>
+  <div class="ad-box">광고 자리</div>
+</div>
+
+<footer>실버 SOS · 어르신을 위한 생활 도우미<br>본 서비스의 건강·복지 정보는 참고용입니다.</footer>
+
+<script>
+/* ===================== 공통 ===================== */
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+/* ---- 자연스러운 한국어 음성 선택 ---- */
+let koVoice=null;
+function pickVoice(){
+  const voices=speechSynthesis.getVoices().filter(v=>v.lang.replace('_','-').startsWith('ko'));
+  if(!voices.length) return;
+  // 자연스러운 순서: Google/Neural/Natural 계열 > 애플 유나/소라 > 나머지
+  const rank=v=>{
+    const n=v.name.toLowerCase();
+    if(n.includes('natural')||n.includes('neural')) return 0;   // Edge 자연 음성
+    if(n.includes('google')) return 1;                           // Chrome 구글 음성
+    if(n.includes('yuna')||n.includes('유나')||n.includes('sora')||n.includes('소라')) return 2; // 애플
+    if(!v.localService) return 3;                                // 온라인(고품질) 음성
+    return 4;
+  };
+  voices.sort((a,b)=>rank(a)-rank(b));
+  koVoice=voices[0];
+}
+pickVoice();
+if('onvoiceschanged' in speechSynthesis) speechSynthesis.onvoiceschanged=pickVoice;
+
+function speak(text){
+  try{
+    speechSynthesis.cancel();
+    // 문장 단위로 나눠 읽으면 억양과 쉼이 훨씬 자연스러움
+    const parts=text.split(/(?<=[.!?。])\s+/).filter(s=>s.trim());
+    parts.forEach(p=>{
+      const u=new SpeechSynthesisUtterance(p.trim());
+      u.lang='ko-KR'; u.rate=0.95; u.pitch=1.05;
+      if(koVoice) u.voice=koVoice;
+      speechSynthesis.speak(u);
+    });
+  }catch(e){}
+}
+let fontStep=0;
+function cycleFont(){
+  fontStep=(fontStep+1)%3;
+  document.body.className = fontStep===1?'font-big':fontStep===2?'font-huge':'';
+  document.getElementById('fontBtn').textContent = ['가 글자크기','가 크게','가 아주크게'][fontStep];
+}
+/* 인사말 */
+(function(){
+  const h=new Date().getHours();
+  const g = h<11?'좋은 아침입니다! 아침 식사는 하셨어요? 🌅'
+    : h<17?'안녕하세요! 오늘도 건강한 하루 되세요 🌞'
+    : '편안한 저녁 되세요. 오늘 하루도 수고 많으셨어요 🌙';
+  document.getElementById('greeting').textContent=g;
+})();
+
+/* ===================== 건강 사전 ===================== */
+const HEALTH = [
+  {t:'🩸 혈압 정상 수치', b:'정상 혈압은 위(수축기) 120 미만, 아래(이완기) 80 미만입니다. 위가 140 이상이거나 아래가 90 이상이면 고혈압이 의심되니 병원에서 확인하세요.'},
+  {t:'🍚 혈당 정상 수치', b:'아침 공복 혈당은 70에서 99가 정상입니다. 식사 후 2시간 혈당은 140 미만이 정상입니다. 공복 혈당이 126 이상이면 당뇨가 의심됩니다.'},
+  {t:'💊 약 먹는 시간', b:'식전 약은 밥 먹기 30분 전, 식후 약은 밥 먹고 30분 안에 드세요. 약을 깜빡했을 때 두 번 몰아서 드시면 안 됩니다.'},
+  {t:'🌡 정상 체온', b:'정상 체온은 36.5도에서 37.2도입니다. 38도가 넘으면 열이 있는 것이니 해열제를 드시고, 계속 높으면 병원에 가세요.'},
+  {t:'🥚 콜레스테롤', b:'총 콜레스테롤은 200 미만이 좋습니다. 높으면 기름진 음식과 튀김을 줄이고, 걷기 운동을 꾸준히 하세요.'},
+  {t:'🚶 하루 걷기', b:'하루 30분, 5천 걸음 이상 걸으면 혈압·혈당·치매 예방에 모두 좋습니다. 무릎이 아프면 평평한 길을 천천히 걸으세요.'},
+  {t:'💧 물 마시기', b:'어르신은 목이 안 말라도 몸에 물이 부족할 수 있습니다. 하루 5잔에서 6잔 정도 조금씩 자주 드세요.'}
+];
+(function(){
+  const box=document.getElementById('healthCards');
+  HEALTH.forEach(h=>{
+    const d=document.createElement('div'); d.className='card';
+    d.innerHTML='<h3>'+h.t+'</h3><p>'+h.b+'</p>';
+    const btn=document.createElement('button'); btn.className='speak-btn'; btn.textContent='🔊 읽어주기';
+    btn.onclick=()=>speak(h.t.replace(/[^가-힣 0-9]/g,'')+'. '+h.b);
+    d.appendChild(btn); box.appendChild(d);
+  });
+})();
+const HEALTH_QA = [
+  {k:['커피','카페인'], a:'혈압약을 드시는 분은 커피를 하루 1잔 정도로 줄이는 것이 좋습니다. 약 먹은 직후보다는 2시간쯤 지나서 드세요. 자세한 것은 약사님께 꼭 확인하세요.'},
+  {k:['술','음주'], a:'약과 술을 같이 드시면 위험할 수 있습니다. 특히 혈압약, 당뇨약, 수면제는 술과 함께 드시면 안 됩니다.'},
+  {k:['자몽'], a:'자몽은 일부 혈압약, 고지혈증약과 같이 먹으면 안 됩니다. 드시는 약이 있다면 약사님께 확인하세요.'},
+  {k:['깜빡','잊','두번','두 번'], a:'약을 깜빡하셨다면 생각난 즉시 드시되, 다음 약 시간이 가까우면 그냥 건너뛰세요. 절대 두 번 몰아서 드시면 안 됩니다.'},
+  {k:['어지','현기'], a:'어지러움은 혈압이 너무 낮거나 약 부작용일 수 있습니다. 갑자기 일어나지 마시고, 자주 어지러우면 병원에서 혈압을 확인하세요.'},
+  {k:['잠','불면','수면'], a:'잠이 안 오면 낮잠을 줄이고, 저녁에 커피·녹차를 피하고, 자기 전 따뜻한 물로 씻어보세요. 계속 힘드시면 병원과 상담하세요.'}
+];
+function askHealth(){
+  const q=document.getElementById('healthQ').value.trim();
+  if(!q) return;
+  let a='좋은 질문이에요. 이 부분은 드시는 약과 몸 상태에 따라 다를 수 있어서, 가까운 약국이나 병원(☎129)에서 확인하시는 게 가장 안전합니다. 정식 버전에서는 AI가 자세히 답해드립니다.';
+  for(const item of HEALTH_QA){ if(item.k.some(k=>q.includes(k))){ a=item.a; break; } }
+  const box=document.getElementById('healthA');
+  box.style.display='block'; box.textContent='🤖 '+a;
+  const sb=document.createElement('button'); sb.className='speak-btn'; sb.textContent='🔊 읽어주기';
+  sb.style.display='block'; sb.onclick=()=>speak(a); box.appendChild(sb);
+}
+
+/* ===================== 지원금 ===================== */
+function findBenefits(){
+  const by=parseInt(document.getElementById('mBirthYear').value);
+  const income=document.getElementById('mIncome').value;
+  const dis=document.getElementById('mDisability').value;
+  const region=document.getElementById('mRegion').value;
+  const out=document.getElementById('moneyResults');
+  const thisYear=new Date().getFullYear();
+  if(!by || by<1900 || by>thisYear){ out.innerHTML='<div class="card"><p>태어난 년도를 확인해 주세요. (예: 1958)</p></div>'; return; }
+  const age=thisYear-by; // 만나이 기준(생일 지난 경우), 지원 기준에 충분
+  const R=[];
+  const add=(name,desc,link,linkName)=>R.push({name,desc,link,linkName});
+  if(age>=65){
+    if(income!=='high') add('기초연금','소득 하위 70% 어르신께 매달 연금을 드립니다 (2025년 기준 월 최대 약 34만원). 신청해야 받을 수 있습니다!','https://www.bokjiro.go.kr','복지로에서 신청');
+    add('노인 일자리 사업','공공장소 돌봄, 환경 정비 등 일자리에 참여하면 매달 활동비를 받습니다.','https://www.seniorro.or.kr','노인일자리여기(누리집)');
+    add('지하철 무임 교통','65세 이상은 지하철이 무료입니다. 주민센터에서 어르신 교통카드를 만드세요.','https://www.gov.kr','정부24 안내');
+    add('임플란트·틀니 건강보험','65세 이상은 임플란트 2개까지, 틀니는 건강보험 지원으로 저렴하게 할 수 있습니다.','https://www.nhis.or.kr','건강보험공단');
+    add('독감 무료 예방접종','65세 이상은 매년 가을 독감 주사가 무료입니다. 가까운 병원·보건소에서 맞으세요.','https://nip.kdca.go.kr','예방접종도우미');
+    add('치매 무료 검진','60세 이상은 보건소 치매안심센터에서 무료로 치매 검사를 받을 수 있습니다.','https://www.nid.or.kr','치매안심센터 찾기');
+  } else if(age>=60){
+    add('치매 무료 검진','60세 이상은 보건소 치매안심센터에서 무료로 치매 검사를 받을 수 있습니다.','https://www.nid.or.kr','치매안심센터 찾기');
+    add('노후준비 서비스','국민연금공단에서 노후 준비 상담을 무료로 받을 수 있습니다. (기초연금은 65세부터)','https://www.nps.or.kr','국민연금공단');
+  } else {
+    add('아직 조금 이르세요','대부분의 어르신 지원은 60~65세부터 시작됩니다. 미리 알아두시면 좋아요!','https://www.bokjiro.go.kr','복지로 미리보기');
+  }
+  if(income==='low'){
+    add('기초생활보장·차상위 지원','소득이 적으면 생계비, 의료비, 주거비 지원을 받을 수 있습니다. 주민센터에 문의하세요.','https://www.bokjiro.go.kr','복지로 확인');
+    add('노인 안검진·개안수술 지원','저소득 어르신께 눈 검진과 백내장 수술비를 지원합니다.','https://www.bokjiro.go.kr','복지로 확인');
+  }
+  if(dis==='yes'){
+    add('장애인연금·장애수당','장애 등록이 되어 있으면 매달 연금 또는 수당을 받을 수 있습니다.','https://www.bokjiro.go.kr','복지로 확인');
+    add('보청기 지원','청각장애 등록 시 보청기 구입비를 지원받을 수 있습니다 (5년에 1회). 이비인후과와 주민센터에 문의하세요.','https://www.nhis.or.kr','건강보험공단');
+  }
+  let html='<div class="card" style="background:#fffbe6"><h3>📋 '+region+'에 사시는 '+by+'년생 ('+age+'세) 어르신께</h3><p>받으실 수 있는 지원 <strong style="color:var(--red)">'+R.length+'가지</strong>를 찾았어요!</p></div>';
+  R.forEach(r=>{
+    html+='<div class="result-item"><strong>✅ '+r.name+'</strong><p>'+r.desc+'</p><a href="'+r.link+'" target="_blank">👉 '+r.linkName+'</a></div>';
+  });
+  html+='<a class="big-btn c-green" href="tel:129">📞 129 눌러서 물어보기 (보건복지상담)</a>';
+  out.innerHTML=html;
+}
+
+/* ===================== 병원·약국 ===================== */
+function openMap(word){
+  window.open('https://map.naver.com/p/search/'+encodeURIComponent('주변 '+word),'_blank');
+}
+
+/* ===================== 약 알림 ===================== */
+let meds = JSON.parse(localStorage.getItem('sos_meds')||'[]');
+let firedToday = {};
+function renderMeds(){
+  const box=document.getElementById('medList');
+  if(!meds.length){ box.innerHTML='<div class="card"><p>아직 등록된 알림이 없습니다.</p></div>'; return; }
+  box.innerHTML='';
+  meds.forEach((m,i)=>{
+    const d=document.createElement('div'); d.className='med-item';
+    d.innerHTML='<span>💊 '+m.name+' · '+m.time+'</span>';
+    const b=document.createElement('button'); b.textContent='삭제';
+    b.onclick=()=>{ meds.splice(i,1); saveMeds(); };
+    d.appendChild(b); box.appendChild(d);
+  });
+}
+function saveMeds(){ localStorage.setItem('sos_meds',JSON.stringify(meds)); renderMeds(); }
+function addMed(){
+  const name=document.getElementById('medName').value.trim()||'약';
+  const time=document.getElementById('medTime').value;
+  if(!time){ alert('시간을 정해주세요.'); return; }
+  meds.push({name,time}); saveMeds();
+  if('Notification' in window && Notification.permission!=='granted') Notification.requestPermission();
+  document.getElementById('medName').value=''; document.getElementById('medTime').value='';
+}
+setInterval(()=>{
+  const now=new Date();
+  const hhmm=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  const key=now.toDateString();
+  meds.forEach(m=>{
+    const fk=key+m.time+m.name;
+    if(m.time===hhmm && !firedToday[fk]){
+      firedToday[fk]=true;
+      const msg=m.name+' 드실 시간입니다!';
+      if('Notification' in window && Notification.permission==='granted') new Notification('💊 실버 SOS',{body:msg});
+      speak(msg); alert('💊 '+msg);
+    }
+  });
+},20000);
+renderMeds();
+
+/* ===================== 치매 예방 ===================== */
+const QUIZZES=[
+  {q:'우리나라에서 가장 긴 강은?',o:['한강','낙동강','금강'],a:1},
+  {q:'설날에 먹는 대표 음식은?',o:['떡국','팥죽','송편'],a:0},
+  {q:'1년은 모두 몇 달일까요?',o:['10달','11달','12달'],a:2},
+  {q:'추석에 먹는 대표 떡은?',o:['백설기','송편','인절미'],a:1},
+  {q:'신호등에서 건너도 되는 불 색깔은?',o:['빨간불','초록불','노란불'],a:1},
+  {q:'김치의 주재료는?',o:['배추','호박','감자'],a:0},
+  {q:'우리나라의 수도는?',o:['부산','서울','대전'],a:1},
+  {q:'동지에 먹는 음식은?',o:['팥죽','미역국','떡국'],a:0},
+  {q:'무궁화는 무엇일까요?',o:['새 이름','나라꽃','산 이름'],a:1},
+  {q:'119는 언제 거는 전화일까요?',o:['불이 났을 때','길을 물을 때','물건을 살 때'],a:0},
+  {q:'생일에 먹는 국은?',o:['된장국','미역국','콩나물국'],a:1},
+  {q:'가을에 단풍 색은?',o:['빨강·노랑','파랑','보라'],a:0},
+  {q:'"가는 말이 고와야 ___" 다음은?',o:['오는 말이 곱다','가는 말이 곱다','말이 없다'],a:0},
+  {q:'"낮말은 새가 듣고 밤말은 ___가 듣는다"',o:['개','쥐','고양이'],a:1},
+  {q:'"세 살 버릇 ___까지 간다"',o:['열 살','스무 살','여든'],a:2},
+  {q:'"호랑이도 제 말 하면 ___"',o:['온다','도망간다','웃는다'],a:0},
+  {q:'"등잔 밑이 ___"',o:['밝다','어둡다','뜨겁다'],a:1},
+  {q:'"백지장도 맞들면 ___"',o:['낫다','무겁다','찢어진다'],a:0},
+  {q:'"원숭이도 나무에서 ___"',o:['잔다','떨어진다','노래한다'],a:1},
+  {q:'"소 잃고 ___ 고친다"',o:['대문','지붕','외양간'],a:2},
+  {q:'한글을 만드신 임금님은?',o:['세종대왕','태종','영조'],a:0},
+  {q:'거북선을 만든 장군은?',o:['강감찬','이순신','김유신'],a:1},
+  {q:'우리나라 국기의 이름은?',o:['일장기','태극기','성조기'],a:1},
+  {q:'일주일은 모두 며칠일까요?',o:['5일','6일','7일'],a:2},
+  {q:'한 시간은 몇 분일까요?',o:['30분','60분','100분'],a:1},
+  {q:'하루는 몇 시간일까요?',o:['12시간','20시간','24시간'],a:2},
+  {q:'가을에 추수하는 곡식은?',o:['벼','감자','고구마'],a:0},
+  {q:'개구리가 겨울에 하는 것은?',o:['겨울잠','이사','여행'],a:0},
+  {q:'소의 새끼를 부르는 말은?',o:['망아지','송아지','강아지'],a:1},
+  {q:'닭의 새끼를 부르는 말은?',o:['병아리','오리','참새'],a:0},
+  {q:'사계절 중 가장 추운 계절은?',o:['봄','가을','겨울'],a:2},
+  {q:'봄 다음에 오는 계절은?',o:['여름','가을','겨울'],a:0},
+  {q:'정월대보름에 먹는 밥은?',o:['볶음밥','오곡밥','비빔밥'],a:1},
+  {q:'밥을 지을 때 꼭 필요한 것은?',o:['쌀','밀가루','설탕'],a:0},
+  {q:'우체통은 무슨 색일까요?',o:['파란색','빨간색','노란색'],a:1},
+  {q:'전설에서 달에 산다는 동물은?',o:['토끼','거북이','호랑이'],a:0},
+  {q:'흥부에게 박씨를 물어다 준 새는?',o:['까치','제비','참새'],a:1},
+  {q:'복날에 몸보신으로 먹는 음식은?',o:['삼계탕','냉면','김밥'],a:0},
+  {q:'어버이날에 달아드리는 꽃은?',o:['장미','카네이션','국화'],a:1},
+  {q:'추석은 음력 몇 월 며칠일까요?',o:['8월 15일','1월 1일','5월 5일'],a:0},
+  {q:'단오에 여자들이 즐기던 놀이는?',o:['그네뛰기','팽이치기','제기차기'],a:0},
+  {q:'김장은 주로 어느 계절에 할까요?',o:['봄','여름','늦가을'],a:2},
+  {q:'"티끌 모아 ___"',o:['태산','바다','하늘'],a:0},
+  {q:'"우물 안 ___"',o:['물고기','개구리','자라'],a:1},
+  {q:'"돌다리도 ___ 건너라"',o:['뛰어서','두들겨 보고','눈 감고'],a:1},
+  {q:'"바늘 가는 데 ___ 간다"',o:['실','옷','천'],a:0},
+  {q:'애국가는 몇 절까지 있을까요?',o:['2절','3절','4절'],a:2},
+  {q:'광복절은 몇 월 며칠일까요?',o:['8월 15일','3월 1일','6월 25일'],a:0},
+  {q:'"말 한마디에 천 냥 ___ 갚는다"',o:['빚','돈','쌀'],a:0},
+  {q:'"누워서 ___ 먹기"',o:['밥','떡','죽'],a:1},
+  {q:'"꿩 먹고 ___ 먹고"',o:['알','밥','떡'],a:0},
+  {q:'"미운 놈 ___ 하나 더 준다"',o:['밥','떡','매'],a:1},
+  {q:'"쥐구멍에도 ___ 들 날 있다"',o:['볕','물','바람'],a:0},
+  {q:'"고래 싸움에 ___ 등 터진다"',o:['멸치','새우','조개'],a:1},
+  {q:'"가재는 ___ 편"',o:['게','새우','물고기'],a:0},
+  {q:'"닭 쫓던 개 ___ 쳐다본다"',o:['하늘','지붕','마당'],a:1},
+  {q:'"믿는 도끼에 ___ 찍힌다"',o:['발등','손등','나무'],a:0},
+  {q:'"콩 심은 데 콩 나고 ___ 심은 데 ___ 난다"',o:['팥','벼','보리'],a:0},
+  {q:'"하늘이 무너져도 솟아날 ___이 있다"',o:['구멍','길','문'],a:0},
+  {q:'"개천에서 ___ 난다"',o:['잉어','용','거북'],a:1},
+  {q:'"서당 개 삼 년이면 ___을 읊는다"',o:['풍월','시조','노래'],a:0},
+  {q:'"열 번 찍어 안 넘어가는 ___ 없다"',o:['사람','나무','기둥'],a:1},
+  {q:'"빈 수레가 ___"',o:['요란하다','가볍다','빠르다'],a:0},
+  {q:'"목마른 놈이 ___ 판다"',o:['우물','밭','논'],a:0},
+  {q:'"언 발에 ___ 누기"',o:['물','오줌','불'],a:1},
+  {q:'삼일절은 몇 월 며칠일까요?',o:['3월 1일','1월 3일','5월 1일'],a:0},
+  {q:'한글날은 몇 월 며칠일까요?',o:['9월 9일','10월 9일','11월 9일'],a:1},
+  {q:'어린이날은 몇 월 며칠일까요?',o:['5월 5일','5월 8일','6월 5일'],a:0},
+  {q:'어버이날은 몇 월 며칠일까요?',o:['5월 5일','5월 8일','5월 15일'],a:1},
+  {q:'현충일은 몇 월 며칠일까요?',o:['6월 6일','6월 25일','8월 15일'],a:0},
+  {q:'남한에서 가장 높은 산은?',o:['지리산','한라산','설악산'],a:1},
+  {q:'한반도에서 가장 높은 산은?',o:['백두산','금강산','한라산'],a:0},
+  {q:'우리나라에서 가장 큰 섬은?',o:['거제도','울릉도','제주도'],a:2},
+  {q:'경주는 옛날 어느 나라의 수도였을까요?',o:['백제','신라','고구려'],a:1},
+  {q:'이성계가 세운 나라는?',o:['고려','조선','발해'],a:1},
+  {q:'온돌은 무엇을 따뜻하게 할까요?',o:['방바닥','천장','벽'],a:0},
+  {q:'숭례문의 다른 이름은?',o:['동대문','남대문','서대문'],a:1},
+  {q:'만 원짜리 지폐에 그려진 분은?',o:['세종대왕','이순신','이황'],a:0},
+  {q:'오만 원짜리 지폐에 그려진 분은?',o:['유관순','신사임당','명성황후'],a:1},
+  {q:'백 원짜리 동전에 그려진 분은?',o:['이순신','세종대왕','김구'],a:0},
+  {q:'물이 어는 온도는?',o:['0도','10도','영하 100도'],a:0},
+  {q:'물이 펄펄 끓는 온도는?',o:['50도','100도','200도'],a:1},
+  {q:'일 년 중 낮이 가장 긴 날은?',o:['동지','하지','추분'],a:1},
+  {q:'일 년 중 밤이 가장 긴 날은?',o:['동지','하지','입춘'],a:0},
+  {q:'벼는 익을수록 어떻게 될까요?',o:['고개를 든다','고개를 숙인다','키가 커진다'],a:1},
+  {q:'콩으로 만든 하얗고 네모난 음식은?',o:['두부','묵','떡'],a:0},
+  {q:'메주로 담그는 것은?',o:['고추장','된장','젓갈'],a:1},
+  {q:'추석에 손잡고 빙빙 도는 전통 놀이는?',o:['강강술래','널뛰기','윷놀이'],a:0},
+  {q:'무지개는 몇 가지 색일까요?',o:['5가지','7가지','9가지'],a:1},
+  {q:'소방차는 무슨 색일까요?',o:['빨간색','파란색','노란색'],a:0},
+  {q:'해는 어느 쪽에서 뜰까요?',o:['서쪽','동쪽','북쪽'],a:1},
+  {q:'해는 어느 쪽으로 질까요?',o:['서쪽','동쪽','남쪽'],a:0},
+  {q:'벌이 만드는 달콤한 것은?',o:['설탕','꿀','물엿'],a:1},
+  {q:'가위바위보에서 보를 이기는 것은?',o:['가위','바위','보'],a:0},
+  {q:'십이지(띠)의 첫 번째 동물은?',o:['소','쥐','호랑이'],a:1},
+  {q:'십이지(띠)의 마지막 동물은?',o:['돼지','개','닭'],a:0},
+  {q:'설날 어른께 드리는 절은?',o:['세배','문안','큰절'],a:0},
+  {q:'단오는 음력 몇 월 며칠일까요?',o:['3월 3일','5월 5일','7월 7일'],a:1},
+  {q:'누에가 만드는 실로 짜는 옷감은?',o:['비단','삼베','무명'],a:0},
+  {q:'우리나라 전통 씨름에서 허리에 매는 것은?',o:['허리띠','샅바','밧줄'],a:1},
+  {q:'윷놀이에서 가장 좋은 것은?',o:['도','개','모'],a:2},
+];
+function bestScore(k){ return parseInt(localStorage.getItem('sos_'+k)||'0'); }
+function setScore(k,v){ if(v>bestScore(k)) localStorage.setItem('sos_'+k,v); showScores(); }
+function showScores(){
+  document.getElementById('brainScore').textContent=
+    '🏆 최고 기록 — 퀴즈 '+bestScore('quiz')+'점 · 숫자 '+bestScore('num')+'자리 · 계산 '+bestScore('calc')+'점';
+}
+showScores();
+const area=()=>document.getElementById('gameArea');
+
+/* 오늘의 퀴즈 */
+let quizIdx=0, quizScore=0, quizSet=[];
+function startQuiz(){
+  const d=new Date();
+  const seed=d.getFullYear()*372+(d.getMonth()+1)*31+d.getDate();
+  const key=i=>(i*137+seed*61)%QUIZZES.length + Math.random()*0.01; // 날짜별로 다른 5문제
+  quizSet=QUIZZES.map((q,i)=>({q,k:key(i)})).sort((a,b)=>a.k-b.k).slice(0,5).map(x=>x.q);
+  quizIdx=0; quizScore=0; showQuiz();
+}
+function showQuiz(){
+  if(quizIdx>=quizSet.length){
+    area().innerHTML='<div class="game-area"><p style="font-size:1.2em">🎉 오늘의 퀴즈 끝!</p><div class="game-num">'+quizScore+'점</div><button class="big-btn c-purple" onclick="startQuiz()">다시 하기</button></div>';
+    setScore('quiz',quizScore);
+    return;
+  }
+  const q=quizSet[quizIdx];
+  let html='<div class="game-area"><p class="score-line">'+(quizIdx+1)+' / '+quizSet.length+'번 문제</p><p style="font-size:1.1em;font-weight:bold;margin-bottom:14px">'+q.q+'</p>';
+  q.o.forEach((o,i)=>{ html+='<button class="quiz-opt" onclick="pickQuiz(this,'+i+','+q.a+')">'+o+'</button>'; });
+  html+='<button class="speak-btn" onclick="speak(quizSet[quizIdx].q)">🔊 문제 읽어주기</button>';
+  area().innerHTML=html+'</div>';
+}
+function pickQuiz(btn,i,a){
+  document.querySelectorAll('#gameArea .quiz-opt').forEach(b=>b.disabled=true);
+  if(i===a){ btn.classList.add('correct'); quizScore+=20; }
+  else{ btn.classList.add('wrong'); document.querySelectorAll('#gameArea .quiz-opt')[a].classList.add('correct'); }
+  setTimeout(()=>{ quizIdx++; showQuiz(); }, 1600);
+}
+
+/* 숫자 기억하기 */
+let numLevel=3;
+function startNumber(){ numLevel=3; showNumber(); }
+function showNumber(){
+  let n=''; for(let i=0;i<numLevel;i++) n+=Math.floor(Math.random()*10);
+  area().innerHTML='<div class="game-area"><p>이 숫자를 잘 기억하세요!</p><div class="game-num">'+n+'</div><p class="score-line">'+numLevel+'자리</p></div>';
+  setTimeout(()=>{
+    area().innerHTML='<div class="game-area"><p>방금 본 숫자를 적어주세요</p><input id="numAns" inputmode="numeric" style="margin:14px 0;text-align:center;font-size:1.3em"><button class="big-btn c-blue" onclick="checkNumber(\''+n+'\')">확인</button></div>';
+  }, 2500+numLevel*400);
+}
+function checkNumber(n){
+  const v=document.getElementById('numAns').value.trim();
+  if(v===n){
+    setScore('num',numLevel); numLevel++;
+    area().innerHTML='<div class="game-area"><p style="font-size:1.2em">⭕ 정답! 대단하세요!</p><button class="big-btn c-blue" onclick="showNumber()">다음 단계 ('+numLevel+'자리) 도전</button></div>';
+  } else {
+    area().innerHTML='<div class="game-area"><p style="font-size:1.1em">아쉬워요! 정답은</p><div class="game-num">'+n+'</div><p class="score-line">'+(numLevel-1>=3?(numLevel)+'자리에서 멈췄어요':'')+'</p><button class="big-btn c-blue" onclick="startNumber()">다시 하기</button></div>';
+  }
+}
+
+/* 계산 게임 */
+let calcIdx=0, calcScore=0, calcAns=0;
+function startCalc(){ calcIdx=0; calcScore=0; showCalc(); }
+function showCalc(){
+  if(calcIdx>=5){
+    area().innerHTML='<div class="game-area"><p style="font-size:1.2em">🎉 계산 게임 끝!</p><div class="game-num">'+calcScore+'점</div><button class="big-btn c-orange" onclick="startCalc()">다시 하기</button></div>';
+    setScore('calc',calcScore);
+    return;
+  }
+  const a=Math.floor(Math.random()*20)+5, b=Math.floor(Math.random()*15)+3;
+  const plus=Math.random()<0.6;
+  const x=plus?a:Math.max(a,b), y=plus?b:Math.min(a,b);
+  calcAns=plus?x+y:x-y;
+  area().innerHTML='<div class="game-area"><p class="score-line">'+(calcIdx+1)+' / 5번 문제</p><div class="game-num">'+x+' '+(plus?'+':'−')+' '+y+' = ?</div><input id="calcIn" inputmode="numeric" style="margin:10px 0;text-align:center;font-size:1.3em"><button class="big-btn c-orange" onclick="checkCalc()">확인</button></div>';
+}
+function checkCalc(){
+  const v=parseInt(document.getElementById('calcIn').value);
+  if(v===calcAns){ calcScore+=20; } else { alert('정답은 '+calcAns+' 이었어요!'); }
+  calcIdx++; showCalc();
+}
+
+/* ===================== 손주랑 대화거리 ===================== */
+const GK_STORIES=[
+  {t:'금도끼 은도끼', s:'옛날에 착한 나무꾼이 연못에 쇠도끼를 빠뜨렸단다. 그런데 산신령이 나타나 금도끼를 들고 "이게 네 도끼냐?" 물었지. 나무꾼이 "아니요, 제 것은 쇠도끼예요" 하고 정직하게 말하니, 산신령이 기특하다며 금도끼, 은도끼를 모두 주었단다. 정직하면 복이 온단다.'},
+  {t:'토끼와 거북이', s:'옛날에 빠른 토끼와 느린 거북이가 달리기 시합을 했단다. 토끼는 거북이가 한참 뒤에 오니까 낮잠을 잤지. 그런데 거북이는 쉬지 않고 엉금엉금 계속 걸어서 결국 토끼를 이겼단다. 꾸준한 게 제일 무서운 거란다.'},
+  {t:'흥부와 놀부', s:'착한 흥부가 다리 다친 제비를 고쳐주었더니, 제비가 박씨를 물어다 주었단다. 그 박에서 금은보화가 쏟아져 나왔지. 욕심쟁이 형 놀부는 일부러 제비 다리를 부러뜨렸다가 도깨비한테 혼쭐이 났단다. 착하게 살아야 복을 받는단다.'},
+  {t:'해와 달이 된 오누이', s:'옛날에 호랑이가 떡 장수 어머니를 잡아먹고 오누이까지 잡아먹으려 했단다. 오누이는 하늘에 빌어서 튼튼한 동아줄을 타고 하늘로 올라가 오빠는 해가 되고 동생은 달이 되었단다. 하늘은 착한 사람을 돕는단다.'},
+  {t:'청개구리 이야기', s:'옛날에 엄마 말을 늘 거꾸로 듣는 청개구리가 있었단다. 엄마가 돌아가시며 냇가에 묻어달라고 했는데, 이번만은 말을 들어서 정말 냇가에 묻었지. 그래서 비만 오면 무덤이 떠내려갈까 봐 개굴개굴 운단다. 부모님 말씀 잘 들어야 한다는 이야기란다.'},
+  {t:'선녀와 나무꾼', s:'착한 나무꾼이 사냥꾼에게 쫓기는 사슴을 숨겨주었단다. 사슴은 은혜를 갚으려고 선녀들이 목욕하는 연못을 알려주었지. 나무꾼은 선녀와 결혼해서 행복하게 살았단다. 남을 도우면 은혜가 돌아온단다.'},
+  {t:'소가 된 게으름뱅이', s:'일하기 싫어하던 게으름뱅이가 소머리 탈을 썼다가 진짜 소가 되어버렸단다. 밭을 갈며 고생하다가 무를 먹고 다시 사람이 되었지. 그 후로는 세상에서 제일 부지런한 사람이 되었단다.'},
+  {t:'할아버지의 어린 시절', s:'옛날 이야기 대신, 할아버지 할머니가 어렸을 때 이야기를 해주는 것도 손주들이 정말 좋아한단다. 학교까지 십 리 길을 걸어다닌 이야기, 냇가에서 물고기 잡던 이야기, 처음 텔레비전 봤을 때 이야기를 들려줘 보렴.'},
+  {t:'콩쥐 팥쥐', s:'착한 콩쥐는 새어머니와 팥쥐에게 구박을 받았단다. 깨진 항아리에 물을 채우라는 심술에 두꺼비가 구멍을 막아주고, 참새들이 벼를 다 찧어주었지. 검은 소가 준 예쁜 옷을 입고 잔치에 간 콩쥐는 원님을 만나 행복하게 살았단다. 착한 사람은 하늘이 돕는단다.'},
+  {t:'심청 이야기', s:'효녀 심청이는 앞 못 보는 아버지의 눈을 뜨게 하려고 공양미 삼백 석에 몸을 팔아 인당수에 빠졌단다. 용왕님이 그 효심에 감동해서 심청이를 연꽃에 태워 보냈고, 심청이는 왕비가 되었지. 아버지를 만난 순간 아버지 눈이 번쩍 떠졌단다. 부모를 아끼는 마음이 기적을 만든단다.'},
+  {t:'토끼의 간 (별주부전)', s:'용왕님이 병이 나서 토끼의 간이 약이 된다고 하자, 자라가 토끼를 꾀어 용궁으로 데려갔단다. 토끼는 꾀를 내어 "간을 육지에 두고 왔어요!" 하고 말했지. 자라 등을 타고 육지로 돌아온 토끼는 깡충깡충 도망갔단다. 위기에서는 침착한 꾀가 목숨을 구한단다.'},
+  {t:'의좋은 형제', s:'사이좋은 형과 아우가 가을에 볏단을 나눴는데, 서로 상대를 걱정해서 밤마다 몰래 자기 볏단을 상대네 논에 옮겨 놓았단다. 그런데 아침이 되면 볏단이 그대로인 거야. 어느 달밤에 볏단을 지고 가다 마주친 형제는 서로 부둥켜안고 울었단다. 우애가 이런 거란다.'},
+  {t:'은혜 갚은 까치', s:'한 선비가 구렁이에게 잡아먹힐 뻔한 까치 새끼들을 구해주었단다. 그날 밤 구렁이가 선비를 감고 "종이 세 번 울리면 살려주마" 했지. 그때 까치들이 머리로 종을 들이받아 세 번 울리고 죽었단다. 은혜를 목숨으로 갚은 까치 이야기, 고마움을 잊으면 안 된단다.'},
+  {t:'요술 맷돌', s:'옛날에 돌리면 뭐든지 나오는 요술 맷돌이 있었단다. 도둑이 맷돌을 훔쳐 배를 타고 도망가며 "소금 나와라!" 하고 돌렸지. 그런데 멈추는 방법을 몰라서 소금이 계속 나와 배가 가라앉았단다. 지금도 바닷속에서 맷돌이 돌고 있어서 바닷물이 짜다는구나.'},
+  {t:'임금님 귀는 당나귀 귀', s:'옛날 임금님 귀가 당나귀처럼 길었는데, 그걸 아는 사람은 모자 만드는 사람뿐이었단다. 말을 못 해 병이 날 지경이 되자 대나무숲에 가서 "임금님 귀는 당나귀 귀!" 하고 실컷 외쳤지. 그 후로 바람이 불면 대나무숲에서 그 소리가 들렸단다. 비밀은 참 무거운 거란다.'},
+  {t:'도깨비 방망이', s:'착한 나무꾼이 개암 열매를 주워 도깨비들이 노는 빈집에 숨었다가, 개암을 깨무는 소리에 도깨비들이 놀라 도망가며 금 나와라 뚝딱, 은 나와라 뚝딱 하는 방망이를 두고 갔단다. 욕심쟁이가 흉내 내다가 도깨비들에게 붙잡혀 혼쭐이 났지. 욕심은 화를 부른단다.'},
+  {t:'양치기 소년', s:'양 치는 소년이 심심해서 "늑대다!" 하고 거짓말을 했단다. 마을 사람들이 달려왔지만 늑대는 없었지. 두 번 세 번 거짓말을 하다가, 진짜 늑대가 나타났을 때는 아무도 오지 않았단다. 거짓말을 하면 정말 중요한 순간에 믿어주지 않는단다.'},
+  {t:'해님과 바람', s:'해님과 바람이 나그네 외투 벗기기 내기를 했단다. 바람이 세게 불수록 나그네는 외투를 꽉 붙잡았지. 그런데 해님이 따뜻하게 비추니까 나그네가 스스로 외투를 벗었단다. 힘으로 안 되는 일도 따뜻함으로는 된단다.'},
+  {t:'개미와 베짱이', s:'여름 내내 개미는 땀 흘려 먹이를 모았는데 베짱이는 노래만 불렀단다. 겨울이 오자 베짱이는 먹을 게 없어 개미네 집을 찾아갔지. 착한 개미는 베짱이에게 먹을 것을 나눠주었고, 베짱이는 그다음부터 부지런해졌단다. 미리미리 준비하는 게 중요하단다.'},
+  {t:'방귀쟁이 며느리', s:'새 며느리가 방귀를 참느라 얼굴이 노래지자 시아버지가 "마음껏 뀌어라" 했단다. 그런데 방귀가 어찌나 센지 집이 들썩들썩, 시아버지가 문고리를 잡고 빙글빙글 돌았지 뭐냐. 온 식구가 배꼽을 잡고 웃고, 그 후로 더 화목해졌단다. 참는 것보다 터놓는 게 낫단다.'},
+  {t:'삼년고개', s:'넘어지면 삼 년밖에 못 산다는 고개에서 할아버지가 넘어져 몸져누웠단다. 그때 꾀 많은 아이가 "한 번 넘어지면 삼 년이니, 열 번 넘어지면 삼십 년 아니에요?" 했지. 할아버지는 신이 나서 고개에서 데굴데굴 굴렀고 오래오래 살았단다. 생각을 바꾸면 걱정도 복이 된단다.'},
+  {t:'우렁각시', s:'가난한 총각이 논에서 우렁이를 주워 왔더니, 그날부터 집에 돌아올 때마다 따뜻한 밥상이 차려져 있었단다. 몰래 숨어 보니 우렁이에서 예쁜 각시가 나와 밥을 짓는 게 아니겠니. 둘은 결혼해서 행복하게 살았단다. 성실하게 살면 복이 찾아온단다.'},
+  {t:'팥죽 할머니와 호랑이', s:'호랑이가 할머니를 잡아먹으러 온다고 하자, 알밤과 자라와 멍석과 지게가 팥죽 한 그릇씩 얻어먹고 할머니를 돕기로 했단다. 호랑이가 오자 알밤이 눈을 딱 때리고, 자라가 손을 꽉 물고, 멍석이 둘둘 말아 지게가 강물에 던져버렸지. 작은 친구들도 힘을 모으면 호랑이도 이긴단다.'},
+  {t:'호랑이 형님', s:'나무꾼이 호랑이를 만나 꾀를 내어 "아이고 형님! 어머니가 그토록 찾던 형님!" 하고 외쳤단다. 호랑이는 정말 자기가 사람의 아들인 줄 알고 눈물을 흘리며, 그날부터 밤마다 멧돼지를 잡아 나무꾼 집 마당에 놓고 갔지. 효심은 호랑이도 감동시킨단다.'},
+  {t:'단군 이야기', s:'옛날 하늘의 아들 환웅에게 곰과 호랑이가 찾아와 사람이 되게 해달라고 빌었단다. 쑥과 마늘만 먹으며 백 일을 버텨야 했는데, 호랑이는 도망가고 곰은 참아내어 여자가 되었지. 그 웅녀가 낳은 아들이 우리나라를 세운 단군 할아버지란다. 참을성이 큰 일을 이룬단다.'},
+  {t:'견우와 직녀', s:'하늘나라 견우와 직녀는 서로 사랑에 빠져 일을 게을리하다가, 옥황상제의 노여움을 사서 은하수 양쪽에 떨어져 살게 되었단다. 이를 불쌍히 여긴 까치와 까마귀가 해마다 칠월 칠석에 다리를 놓아주어 둘이 만난단다. 칠석날 비가 오면 그건 두 사람의 기쁨의 눈물이란다.'},
+  {t:'바보 온달과 평강공주', s:'울보 평강공주는 "자꾸 울면 바보 온달에게 시집보낸다"는 말을 듣고 자랐는데, 정말로 온달에게 시집을 갔단다. 공주는 온달에게 글과 무술을 가르쳤고, 온달은 나라를 지키는 훌륭한 장군이 되었지. 사람은 믿어주는 만큼 큰단다.'},
+  {t:'젊어지는 샘물', s:'착한 할아버지가 산속 샘물을 마셨더니 젊은이가 되어 돌아왔단다. 할머니도 마시고 젊어졌지. 그런데 욕심쟁이 영감이 너무 많이 마시는 바람에 갓난아기가 되어버렸단다. 부부는 그 아기를 데려다 아들로 키웠지. 뭐든 지나치면 모자란 것만 못하단다.'},
+  {t:'도깨비 감투', s:'한 총각이 쓰면 몸이 보이지 않는 도깨비 감투를 주웠단다. 처음엔 장난만 치다가 남의 물건에 손을 대기 시작했지. 그러다 감투에 구멍이 나서 빨간 헝겊을 기웠는데, 사람들이 둥둥 떠다니는 빨간 점을 보고 붙잡아 혼쭐을 냈단다. 나쁜 일은 반드시 들통난단다.'},
+  {t:'신기한 항아리', s:'가난한 농부가 밭에서 항아리를 캤는데, 물건을 넣으면 두 개가 되어 나오는 요술 항아리였단다. 부자 영감이 욕심을 내어 빼앗으려다 그만 영감의 아버지가 항아리에 빠져 두 명, 세 명, 계속 나왔지 뭐냐. 욕심을 부리다 아버지 모실 일만 늘었단다.'},
+  {t:'은혜 갚은 두꺼비', s:'한 처녀가 밥을 나눠주며 두꺼비를 정성껏 키웠단다. 마을에 처녀를 제물로 바쳐야 하는 무서운 지네가 살았는데, 처녀가 제물로 뽑히자 두꺼비가 따라가서 지네와 싸워 처녀를 구하고 죽었단다. 정성으로 베푼 정은 반드시 돌아온단다.'},
+  {t:'여우와 두루미', s:'여우가 두루미를 초대해서 납작한 접시에 국을 주었단다. 부리가 긴 두루미는 한 입도 못 먹었지. 두루미도 여우를 초대해 목이 긴 병에 음식을 담아 주었단다. 입이 뭉툭한 여우도 굶고 돌아갔지. 남을 골탕 먹이면 나도 똑같이 당한단다.'},
+  {t:'시골 쥐와 서울 쥐', s:'서울 쥐가 시골 쥐를 초대해서 맛있는 음식이 가득한 집으로 데려갔단다. 그런데 사람과 고양이가 무서워 한 입도 편히 못 먹었지. 시골 쥐는 "보리밥을 먹어도 마음 편한 시골이 낫다"며 돌아갔단다. 마음 편한 게 제일가는 부자란다.'},
+  {t:'황금알을 낳는 거위', s:'한 농부의 거위가 날마다 황금알을 하나씩 낳았단다. 부자가 된 농부는 욕심이 생겨 "뱃속에 황금이 가득하겠지" 하고 거위의 배를 갈랐지. 그런데 뱃속엔 아무것도 없었고, 거위만 죽고 말았단다. 서두르는 욕심이 복을 걷어찬단다.'},
+  {t:'떡 하나 주면 안 잡아먹지', s:'떡을 이고 고개를 넘던 어머니에게 호랑이가 "떡 하나 주면 안 잡아먹지" 하며 계속 따라왔단다. 떡이 다 떨어지자 호랑이는 어머니를 잡아먹고 오누이 집까지 갔지. 그러나 지혜로운 오누이는 나무 위로 피해 하늘의 도움을 받았단다. 나쁜 꾀에는 지혜로 맞서야 한단다.'},
+];
+const GK_QUIZZES=[
+  {q:'걸어다니는데 발자국이 없는 것은?', a:'시계 (째깍째깍 걸어가지요)'},
+  {q:'세상에서 가장 빠른 개는?', a:'번개!'},
+  {q:'머리로 먹고 배로 나오는 것은?', a:'모자를 쓴 사람... 이 아니고, 정답은 "쌀통"이란다. 위로 넣고 아래로 나오지!'},
+  {q:'아무리 먹어도 배부르지 않은 것은?', a:'나이!'},
+  {q:'불을 켜면 없어지는 것은?', a:'어둠!'},
+  {q:'문은 문인데 열 수 없는 문은?', a:'소문!'},
+  {q:'감은 감인데 못 먹는 감은?', a:'영감! (또는 장난감)'},
+  {q:'다리가 4개인데 걷지 못하는 것은?', a:'책상!'},
+  {q:'물은 물인데 사람들이 무서워하는 물은?', a:'괴물!'},
+  {q:'올라갈 때는 가볍고 내려올 때는 무거운 것은?', a:'숟가락 (밥 뜨면 무거워지지!)'},
+  {q:'별 중에 가장 슬픈 별은?', a:'이별!'},
+  {q:'세상에서 제일 뜨거운 과일은?', a:'천도복숭아!'},
+  {q:'눈은 눈인데 못 보는 눈은?', a:'함박눈!'},
+  {q:'발이 두 개 달린 소는?', a:'이발소!'},
+  {q:'자꾸 깎을수록 커지는 것은?', a:'구멍!'},
+  {q:'세상에서 가장 큰 코는?', a:'멕시코!'},
+  {q:'하늘에 사는 개 세 마리는?', a:'무지개, 번개, 안개!'},
+  {q:'말은 말인데 못 타는 말은?', a:'양말! (거짓말도 정답)'},
+  {q:'배는 배인데 못 먹는 배는?', a:'돛단배! (배꼽도 정답)'},
+  {q:'다리는 다리인데 못 건너는 다리는?', a:'안경다리!'},
+  {q:'세상에서 가장 빠른 새는?', a:'눈 깜짝할 새!'},
+  {q:'젊어서는 파랗고 늙으면 빨개지는 것은?', a:'고추!'},
+  {q:'앞으로 가면 지고 뒤로 가면 이기는 것은?', a:'줄다리기!'},
+  {q:'병아리가 제일 잘 먹는 약은?', a:'삐약!'},
+  {q:'도둑이 제일 싫어하는 아이스크림은?', a:'누가바!'},
+  {q:'진짜 문제투성이인 것은?', a:'시험지!'},
+  {q:'신사가 자기소개를 하면?', a:'신사임당!'},
+  {q:'울면서 점점 키가 작아지는 것은?', a:'양초!'},
+  {q:'낮에는 숨었다가 밤에만 나오는 것은?', a:'별!'},
+  {q:'차는 차인데 마시는 차는?', a:'녹차! (보리차도 정답)'},
+  {q:'구멍이 뚫려 있어야 쓸모 있는 것은?', a:'단추!'},
+  {q:'김은 김인데 못 먹는 김은?', a:'입김! (김서림도 정답)'},
+  {q:'불은 불인데 뜨겁지 않은 불은?', a:'이불!'},
+  {q:'못은 못인데 망치로 못 박는 못은?', a:'연못!'},
+  {q:'밤은 밤인데 못 먹는 밤은?', a:'캄캄한 밤!'},
+  {q:'떡은 떡인데 못 먹는 떡은?', a:'그림의 떡!'},
+  {q:'왕이 넘어지면?', a:'킹콩!'},
+  {q:'세상에서 제일 추운 바다는?', a:'썰렁해!'},
+  {q:'세상에서 제일 억울한 도형은?', a:'원통!'},
+  {q:'바나나가 웃으면?', a:'바나나킥!'},
+  {q:'사과가 웃으면?', a:'풋사과!'},
+  {q:'오리가 얼면?', a:'언덕! (언 duck)'},
+  {q:'소가 웃는 소리는?', a:'우하하!'},
+  {q:'물고기 중에 제일 비싼 물고기는?', a:'금붕어!'},
+  {q:'어부들이 제일 싫어하는 가수는?', a:'배철수! (배가 철수하니까)'},
+  {q:'항상 남의 말만 전하는 것은?', a:'전화기!'},
+  {q:'여름에만 열심히 일하는 것은?', a:'선풍기!'},
+  {q:'겨울에만 열심히 일하는 것은?', a:'난로!'},
+  {q:'입이 있는데 말 못 하는 것은?', a:'병! (병 입구)'},
+  {q:'귀가 있어도 못 듣는 것은?', a:'바늘! (바늘귀)'},
+  {q:'아무리 먹어도 배 안 부른 것은?', a:'겁! (겁을 먹지요)'},
+  {q:'세상에서 제일 큰 그릇은?', a:'대접! (사람 대접)'},
+  {q:'눈이 녹으면 뭐가 될까?', a:'봄이 온단다! (물도 정답)'},
+  {q:'도둑이 훔친 돈을 뭐라고 할까?', a:'슬그머니!'},
+  {q:'꽃가게 주인이 제일 싫어하는 도시는?', a:'시드니!'},
+  {q:'세상에서 제일 가난한 왕은?', a:'최저임금!'},
+  {q:'먹을수록 늘어나는 것은?', a:'나이... 가 아니고 이번엔 "몸무게"! 둘 다 정답'},
+  {q:'쓰면 쓸수록 좋아지는 것은?', a:'머리! 그러니 퀴즈를 많이 풀어야 한단다'},
+  {q:'노인들이 제일 좋아하는 폭포는?', a:'나이아가라 폭포! (나이야 가라~)'},
+];
+const GK_LOVES=[
+  '"우리 강아지가 세상에서 제일 예쁘다. 할머니(할아버지)는 네 생각만 하면 힘이 난단다."',
+  '"공부 잘하는 것보다 밥 잘 먹고 튼튼한 게 최고야. 우리 손주 최고!"',
+  '"네가 태어난 날, 할아버지(할머니)가 얼마나 기뻤는지 아니? 온 동네에 자랑했단다."',
+  '"힘든 일 있으면 언제든 전화해라. 할머니(할아버지)는 늘 네 편이란다."',
+  '"우리 손주 목소리 들으니까 십 년은 젊어진 것 같구나!"',
+  '"용돈 줄 테니까 놀러 오너라. 네 얼굴 보는 게 제일 큰 선물이야."',
+  '"넌 뭘 해도 잘될 아이야. 할아버지(할머니)가 보증한다!"',
+  '"사랑한다는 말, 오늘도 해야겠구나. 사랑한다, 우리 강아지."',
+  '"시험 못 봐도 괜찮아. 할머니(할아버지)한테는 네가 늘 일등이야."',
+  '"네 웃는 얼굴이 세상에서 제일 좋은 보약이란다."',
+  '"천천히 커도 된다. 지금 그대로도 충분히 잘하고 있어."',
+  '"네 사진 볼 때마다 하루가 즐겁단다. 새 사진 하나만 보내주련?"',
+  '"친구랑 싸웠어도 괜찮아. 네 마음이 착한 걸 할머니(할아버지)는 안단다."',
+  '"우리 손주 덕분에 사는 재미가 있다. 정말이야."',
+  '"밥 잘 먹고 잘 자는 게 최고 효도란다. 오늘도 푹 자거라."',
+  '"네가 좋아하는 반찬 해놓을 테니, 얼굴 한번 보여주러 오너라."',
+  '"오늘 하늘이 참 예쁘더라. 보니까 네 생각이 나서 연락했다."',
+  '"네 전화 한 통이면 할머니(할아버지)는 일주일이 든든하단다."',
+  '"힘든 날엔 할머니(할아버지) 목소리 들으러 와. 언제든 환영이야."',
+  '"네가 어릴 때 아장아장 걷던 게 엊그제 같은데, 벌써 이렇게 컸구나. 대견하다."',
+  '"뭐든 처음엔 서툰 거야. 할아버지(할머니)도 그랬단다. 넌 잘하고 있어."',
+  '"세상 사람이 다 뭐라 해도, 할머니(할아버지)는 무조건 네 편이다."',
+  '"오늘 좋은 일 있었니? 없었으면 이 문자가 좋은 일이 되면 좋겠구나."',
+  '"환절기에 감기 조심해라. 따뜻하게 입고 다니고."',
+  '"네 이름만 불러도 기분이 좋아진단다. 참 좋은 이름이야."',
+  '"공부하느라 힘들지? 가끔은 푹 쉬어도 된단다."',
+  '"할머니(할아버지) 어릴 적보다 네가 백배는 똑똑하구나. 기특하다."',
+  '"멀리 있어도 마음은 늘 네 곁에 있단다."',
+];
+const GK_TOPICS=[
+  '요즘 학교에서 제일 재미있는 게 뭐니? / 제일 친한 친구는 누구니?',
+  '요즘 무슨 노래 들어? 할머니(할아버지)도 한번 들어보고 싶구나.',
+  '커서 뭐가 되고 싶니? 왜 그게 되고 싶어?',
+  '요즘 제일 갖고 싶은 게 뭐야? (생일 선물 미리 알아두기!)',
+  '휴대폰으로 뭐 하고 노는 거야? 할머니(할아버지)도 가르쳐 줄래?',
+  '방학 때 할머니(할아버지) 집에 놀러 올래? 맛있는 거 해줄게.',
+  '오늘 급식(점심)은 뭐 먹었니? 맛있었어?',
+  '요즘 유행하는 말 하나만 가르쳐 줄래? 할머니(할아버지)도 써보게.',
+  '요즘 제일 재미있게 본 만화(영상)는 뭐야? 할머니(할아버지)도 볼까?',
+  '용돈 모으면 뭐 하고 싶어? 계획 한번 들어보자.',
+  '학교에서 제일 좋아하는 과목이 뭐니? 왜 좋아?',
+  '요즘 무슨 게임 해? 어떻게 하는 건지 설명해 줄래?',
+  '이번 주말에 뭐 했어? 재미있는 일 있었니?',
+  '네가 제일 잘하는 게 뭐라고 생각해? 할머니(할아버지)는 다 궁금하다.',
+  '반에서 제일 웃긴 친구는 누구야? 무슨 일이 있었는데?',
+  '나중에 할머니(할아버지)랑 같이 가보고 싶은 곳 있니?',
+  '요즘 학교에서 배우는 것 중에 제일 신기한 게 뭐야?',
+  '네가 요즘 제일 좋아하는 음식은 뭐니? 할머니(할아버지)가 해줄 수 있는 건가?',
+  '만약 소원이 하나 이루어진다면 뭘 빌고 싶어?',
+  '요즘 키가 얼마나 컸니? 지난번보다 큰 것 같던데.',
+  '동물 중에 뭐가 제일 좋아? 왜?',
+  '할머니(할아버지) 어릴 때는 텔레비전도 없었단다. 뭐 하고 놀았게? 맞혀볼래?',
+  '네 방은 잘 정리하고 지내니? 할아버지(할머니)한테만 살짝 말해봐.',
+  '요즘 아이들은 뭐가 제일 갖고 싶어? 할머니(할아버지) 때는 고무신만 새로 사도 좋았단다.',
+  '수수께끼 하나 낼까? 맞히면 용돈이다!',
+  '엄마 아빠 몰래 하고 싶은 거 있니? 할머니(할아버지)한테만 말해봐. 비밀 지켜줄게.',
+  '가장 최근에 웃었던 일이 뭐야? 할머니(할아버지)도 같이 웃자.',
+  '옛날 이야기 하나 해줄까? 무서운 거, 웃긴 거, 감동적인 거 중에 뭐가 좋아?',
+];
+let gkOffset=0, gkCurrent={};
+function renderGrandkid(){
+  const d=new Date();
+  const seed=d.getFullYear()*372+(d.getMonth()+1)*31+d.getDate()+gkOffset;
+  const story=GK_STORIES[seed%GK_STORIES.length];
+  const quiz=GK_QUIZZES[seed%GK_QUIZZES.length];
+  const love=GK_LOVES[seed%GK_LOVES.length];
+  const topic=GK_TOPICS[seed%GK_TOPICS.length];
+  gkCurrent={story,quiz};
+  document.getElementById('gkStory').innerHTML='<strong>「'+story.t+'」</strong><br>'+story.s;
+  document.getElementById('gkQuiz').textContent=quiz.q;
+  const ansBox=document.getElementById('gkQuizAns');
+  ansBox.style.display='none'; ansBox.textContent='';
+  document.getElementById('gkLove').textContent=love;
+  document.getElementById('gkTopic').textContent=topic;
+}
+function speakStory(){ speak(gkCurrent.story.t+'. '+gkCurrent.story.s); }
+function showKidAnswer(){
+  const box=document.getElementById('gkQuizAns');
+  box.style.display='block'; box.textContent='정답: '+gkCurrent.quiz.a;
+}
+function newGrandkid(){ gkOffset++; renderGrandkid(); window.scrollTo(0,0); }
+renderGrandkid();
+
+/* ===================== 가족 전화 ===================== */
+let family=JSON.parse(localStorage.getItem('sos_family')||'[]');
+function renderFamily(){
+  const box=document.getElementById('familyBtns'); box.innerHTML='';
+  family.forEach((f,i)=>{
+    const a=document.createElement('a'); a.className='call-btn c-teal'; a.href='tel:'+f.num;
+    a.innerHTML='<span class="ico">❤️</span><span>'+f.name+'<small>'+f.num+'</small></span>';
+    const del=document.createElement('button');
+    del.textContent='삭제'; del.style.cssText='margin-left:auto;background:rgba(0,0,0,.25);color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:.7em;cursor:pointer';
+    del.onclick=e=>{ e.preventDefault(); if(confirm(f.name+' 번호를 삭제할까요?')){ family.splice(i,1); saveFamily(); } };
+    a.appendChild(del); box.appendChild(a);
+  });
+}
+function saveFamily(){ localStorage.setItem('sos_family',JSON.stringify(family)); renderFamily(); }
+function addFamily(){
+  const name=document.getElementById('famName').value.trim();
+  const num=document.getElementById('famNum').value.replace(/[^0-9]/g,'');
+  if(!name||num.length<9){ alert('이름과 전화번호를 확인해 주세요.'); return; }
+  family.push({name,num}); saveFamily();
+  document.getElementById('famName').value=''; document.getElementById('famNum').value='';
+}
+renderFamily();
+
+/* ===================== 오늘의 운세 ===================== */
+const ZODIACS=['🐭 쥐띠','🐮 소띠','🐯 호랑이띠','🐰 토끼띠','🐲 용띠','🐍 뱀띠','🐴 말띠','🐑 양띠','🐵 원숭이띠','🐔 닭띠','🐶 개띠','🐷 돼지띠'];
+const F_MAIN=[
+  '오랜만에 반가운 소식이 들려오는 날입니다. 전화 한 통이 기쁨을 줍니다.',
+  '서두르지 않으면 모든 일이 순조로운 날입니다. 여유를 가지세요.',
+  '주변 사람의 도움으로 막혔던 일이 풀립니다. 고마움을 표현하세요.',
+  '작은 행운이 따르는 날입니다. 오늘 웃는 일이 생깁니다.',
+  '가족과의 대화에서 좋은 기운을 얻는 날입니다. 안부 전화를 해보세요.',
+  '몸과 마음이 가벼운 날입니다. 미뤄둔 일을 하기 좋습니다.',
+  '뜻밖의 만남이 즐거움을 주는 날입니다. 밖에 나가보세요.',
+  '차분히 쉬어가는 것이 이로운 날입니다. 무리하지 마세요.',
+];
+const F_HEALTH=[
+  '무릎과 허리를 조심하세요. 스트레칭이 도움이 됩니다.',
+  '소화가 잘 되는 음식이 좋습니다. 과식은 피하세요.',
+  '가벼운 산책이 큰 보약이 되는 날입니다.',
+  '물을 자주 마시면 몸이 한결 가벼워집니다.',
+  '일찍 주무시는 것이 최고의 보약입니다.',
+  '눈이 피로하기 쉬우니 TV·휴대폰을 조금 줄이세요.',
+];
+const F_FOOD=['된장국','고등어구이','두부','시금치나물','미역국','호박죽','삶은 계란','사과 한 개','따뜻한 보리차','고구마','콩자반','버섯볶음'];
+(function(){
+  const grid=document.getElementById('zodiacGrid');
+  ZODIACS.forEach((z,i)=>{
+    const b=document.createElement('button'); b.className='zodiac-btn'; b.textContent=z;
+    b.onclick=()=>showFortune(i); grid.appendChild(b);
+  });
+})();
+/* ===================== AI 자동 생성 콘텐츠 불러오기 ===================== */
+/* GitHub Actions가 매일 content/generated.json에 새 콘텐츠를 추가하면 여기서 합쳐줌.
+   파일이 없거나 실패해도 내장 데이터로 정상 동작. */
+(async function(){
+  try{
+    const r=await fetch('content/generated.json?v='+new Date().toISOString().slice(0,10));
+    if(!r.ok) return;
+    const d=await r.json();
+    (d.quizzes||[]).forEach(q=>{
+      if(q&&q.q&&Array.isArray(q.o)&&q.o.length===3&&Number.isInteger(q.a)&&q.a>=0&&q.a<3
+         &&!QUIZZES.some(x=>x.q===q.q)) QUIZZES.push(q);
+    });
+    (d.stories||[]).forEach(s=>{
+      if(s&&s.t&&s.s&&!GK_STORIES.some(x=>x.t===s.t)) GK_STORIES.push(s);
+    });
+    (d.riddles||[]).forEach(rd=>{
+      if(rd&&rd.q&&rd.a&&!GK_QUIZZES.some(x=>x.q===rd.q)) GK_QUIZZES.push(rd);
+    });
+    (d.loves||[]).forEach(l=>{ if(l&&!GK_LOVES.includes(l)) GK_LOVES.push(l); });
+    (d.topics||[]).forEach(t=>{ if(t&&!GK_TOPICS.includes(t)) GK_TOPICS.push(t); });
+    if(typeof renderGrandkid==='function') renderGrandkid();
+  }catch(e){ /* 오프라인·로컬 파일 실행 시 무시 */ }
+})();
+
+function showFortune(zi){
+  const d=new Date();
+  const seed=d.getFullYear()*372+(d.getMonth()+1)*31+d.getDate()+zi*7;
+  const main=F_MAIN[seed%F_MAIN.length];
+  const health=F_HEALTH[(seed>>2)%F_HEALTH.length];
+  const food=F_FOOD[(seed>>1)%F_FOOD.length];
+  const lucky=(seed%9)+1;
+  const stars='★★★★★☆☆'.slice(seed%3, seed%3+5);
+  document.getElementById('fortuneResult').innerHTML=
+    '<div class="fortune-card"><h3>'+ZODIACS[zi]+' · '+(d.getMonth()+1)+'월 '+d.getDate()+'일</h3>'+
+    '<p style="margin-bottom:8px">오늘의 운 '+stars+'</p>'+
+    '<p><strong>총운:</strong> '+main+'</p>'+
+    '<p style="margin-top:8px"><strong>건강운:</strong> '+health+'</p>'+
+    '<p style="margin-top:8px"><strong>행운의 음식:</strong> '+food+' · <strong>행운의 숫자:</strong> '+lucky+'</p>'+
+    '<button class="speak-btn" onclick="speak(\'오늘의 운세. '+main+' 건강운. '+health+'\')">🔊 읽어주기</button></div>';
+}
+</script>
+</body>
+</html>
