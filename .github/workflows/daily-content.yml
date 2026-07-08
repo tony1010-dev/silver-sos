@@ -1,0 +1,33 @@
+name: 매일 AI 콘텐츠 생성
+
+on:
+  schedule:
+    - cron: '0 19 * * *'   # 매일 UTC 19:00 = 한국시간 새벽 4시
+  workflow_dispatch:        # Actions 탭에서 수동 실행도 가능
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: AI 콘텐츠 생성
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/generate-content.mjs
+
+      - name: 변경사항 커밋 & 푸시
+        run: |
+          git config user.name "silver-sos-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add content/generated.json
+          git diff --cached --quiet || git commit -m "🤖 오늘의 콘텐츠 자동 생성 ($(date +%Y-%m-%d))"
+          git push
+
