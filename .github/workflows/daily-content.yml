@@ -20,7 +20,7 @@ jobs:
 
       - name: AI 콘텐츠 생성
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node scripts/generate-content.mjs
 
       - name: 변경사항 커밋 & 푸시
@@ -30,4 +30,3 @@ jobs:
           git add content/generated.json
           git diff --cached --quiet || git commit -m "🤖 오늘의 콘텐츠 자동 생성 ($(date +%Y-%m-%d))"
           git push
-
